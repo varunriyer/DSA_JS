@@ -46,3 +46,29 @@
     console.log(iter_binary_search(my_arr, my_key1));
     console.log(iter_binary_search(my_arr, my_key2));
 }
+
+// Recursive Binary Search 
+{
+    function recur_binary_search(arr, low, high, key) {
+        if (high >= low) {
+            let mid = Math.floor((low + high) / 2);
+
+            if (arr[mid] === key) {
+                return mid;
+            }
+            if (arr[mid] > key) {
+                return recur_binary_search(arr, low, mid - 1, key);
+            }
+            if (arr[mid] < key) {
+                return recur_binary_search(arr, mid + 1, high, key);
+            }
+
+        }
+        return -1;
+    }
+    let my_arr = [3, 4, 5, 6, 11];
+    let my_key1 = 6;
+    let my_key2 = 7;
+    console.log(recur_binary_search(my_arr, 0, my_arr.length - 1, my_key1));
+    console.log(recur_binary_search(my_arr, 0, my_arr.length - 1, my_key2));
+}
