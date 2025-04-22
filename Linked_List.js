@@ -29,6 +29,26 @@ class LinkedList {
         }
         console.log(result + 'null');
     }
+    delete(value) {
+        if (!this.head) {
+            console.log("Empty list --> Nothing to delete");
+            return;
+        }
+        if (this.head.value === value) {
+            this.head = this.head.next;
+        }
+        let current = this.head;
+        while (current.next !== null) {
+            if (current.next.value === value) {
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+        if (current.next === null) {
+            console.log(`${value} not found in list`);
+        }
+    }
 }
 
 let list = new LinkedList();
@@ -37,3 +57,7 @@ list.append(20);
 list.append(30);
 list.append(40);
 list.printList();
+list.delete(30);
+list.printList();
+list.delete(17);
+
