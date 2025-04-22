@@ -54,6 +54,18 @@ class LinkedList {
         newnode.next = this.head;
         this.head = newnode;
     }
+    search(value) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.value === value) {
+                console.log(`${value} found in list`);
+                return true;
+            }
+            current = current.next;
+        }
+        console.log(`${value} not found in list`);
+        return false;
+    }
 }
 
 let list = new LinkedList();
@@ -67,4 +79,5 @@ list.printList();
 list.delete(17);
 list.prepend(17);
 list.printList();
+list.search(20);
 
