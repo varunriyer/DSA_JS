@@ -66,6 +66,26 @@ class LinkedList {
         console.log(`${value} not found in list`);
         return false;
     }
+    insertAfter(prev_node, value) {
+        if (prev_node === null) {
+            console.log("Previous node cannot be null");
+            return;
+        }
+        let newnode = new Node(value);
+        newnode.next = prev_node.next;
+        prev_node.next = newnode;
+    }
+    searchNode(value) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.value === value) {
+                return current;
+            }
+            current = current.next;
+        }
+        console.log(`${value} not found in list`);
+        return null;
+    }
 }
 
 let list = new LinkedList();
@@ -80,4 +100,7 @@ list.delete(17);
 list.prepend(17);
 list.printList();
 list.search(20);
+list.insertAfter(list.searchNode(10), 15);
+list.printList();
+
 
