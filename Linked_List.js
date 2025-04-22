@@ -1,10 +1,10 @@
 class Node {
     constructor(value) {
         this.value = value;
-        this.next = null
+        this.next = null;
     }
 }
-class linkedList {
+class LinkedList {
     constructor() {
         this.head = null;
     }
@@ -30,7 +30,8 @@ class linkedList {
         console.log(result + 'null');
     }
 }
-let list = new linkedList();
+
+let list = new LinkedList();
 list.append(10);
 list.append(20);
 list.append(30);
