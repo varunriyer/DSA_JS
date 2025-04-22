@@ -49,6 +49,11 @@ class LinkedList {
             console.log(`${value} not found in list`);
         }
     }
+    prepend(value) { //inserting a new node at the beginning of the list 
+        let newnode = new Node(value);
+        newnode.next = this.head;
+        this.head = newnode;
+    }
 }
 
 let list = new LinkedList();
@@ -60,4 +65,6 @@ list.printList();
 list.delete(30);
 list.printList();
 list.delete(17);
+list.prepend(17);
+list.printList();
 
