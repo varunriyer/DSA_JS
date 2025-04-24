@@ -4,3 +4,8 @@ class Node {
         this.next = null;
     }
 }
+class Stack {
+    constructor() {
+        this.head = null;
+    }
+}
