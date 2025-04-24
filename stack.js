@@ -26,6 +26,10 @@ class Stack {
         console.log(this.arr[this.arr.length - 1]);
 
     }
+    isEmpty() {
+        if (this.arr.length === 0) console.log("Yes")
+        console.log("No");
+    }
 }
 
 const myStack = new Stack();
