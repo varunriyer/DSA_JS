@@ -8,5 +8,8 @@ class Queue {
     dequeue() {
         console.log(this.arr.shift());
     }
+    size() {
+        console.log(this.arr.length);
+    }
 
 }
