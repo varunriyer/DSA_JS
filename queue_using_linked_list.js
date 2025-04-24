@@ -4,3 +4,9 @@ class Node {
         this.next = null;
     }
 }
+class Queue {
+    constructor() {
+        this.head = null
+    }
+
+}
