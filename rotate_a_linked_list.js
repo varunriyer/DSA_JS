@@ -33,5 +33,13 @@ class LinkedList {
         }
         console.log(result + "null");
     }
-
 }
+let myList = new LinkedList();
+myList.printList();
+myList.append(2);
+myList.append(4);
+myList.append(6);
+myList.append(8);
+myList.append(10);
+myList.append(12);
+myList.printList();
