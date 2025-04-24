@@ -49,7 +49,24 @@ class LinkedList {
 
     }
     rotateList(k) {
-
+        if (k === this.size()) {
+            console.log(`After ${k} rotations the elements will be in the same order`)
+            return;
+        }
+        let current = this.head
+        while (k > 0) {
+            this.head = this.head.next;
+            k--;
+        }
+        let new_curr = this.head;
+        while (new_curr.next !== null) {
+            new_curr = new_curr.next;
+        }
+        new_curr.next = current;
+        while (current.next !== this.head) {
+            current = current.next;
+        }
+        current.next = null;
     }
 }
 let myList = new LinkedList();
@@ -62,3 +79,6 @@ myList.append(10);
 myList.append(12);
 myList.printList();
 myList.size();
+myList.rotateList(6);
+myList.rotateList(4);
+myList.printList()
