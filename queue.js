@@ -6,7 +6,7 @@ class Queue {
         this.arr.push(value);
     }
     dequeue() {
-        console.log(this.arr.shift());
+        this.arr.shift();
     }
     size() {
         console.log(this.arr.length);
@@ -15,8 +15,18 @@ class Queue {
         console.log(this.arr[0]);
     }
     printQueue() {
-        for (let element of this.arr) {
-            console.log([...element]);
-        }
+        console.log([...this.arr]);
     }
 }
+
+let myQueue = new Queue();
+myQueue.enqueue(7);
+myQueue.enqueue(8);
+myQueue.enqueue(9);
+myQueue.enqueue(10);
+myQueue.printQueue();
+myQueue.dequeue();
+myQueue.printQueue();
+myQueue.peek();
+myQueue.size();
+
