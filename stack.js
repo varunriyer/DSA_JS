@@ -4,28 +4,27 @@ class Stack {
     }
     push(value) {
         this.arr.push(value);
-        return;
+
     }
     pop() {
         console.log(this.arr.pop());
-        return;
+
 
     }
     size() {
-        console.log(this.arr.length());
-        return;
+        console.log(this.arr.length);
+
     }
     printStack() {
         for (let value of this.arr) {
             console.log(value);
         }
-        return;
+
     }
 
     peek() {
-        console.log(this.arr[-1]);
         console.log(this.arr[this.arr.length - 1]);
-        return;
+
     }
 }
 
@@ -36,5 +35,7 @@ myStack.push(5);
 myStack.push(6);
 myStack.printStack();
 myStack.pop()
+myStack.printStack();
 myStack.peek();
+myStack.size();
 
