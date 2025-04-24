@@ -6,6 +6,10 @@ class Stack {
         this.arr.push(value);
         return;
     }
-}
+    pop() {
+        console.log(this.arr.pop());
+        return;
 
+    }
+}
 
