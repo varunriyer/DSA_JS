@@ -12,6 +12,7 @@ class Queue {
         let newNode = new Node(value);
         if (this.head === null) {
             this.head = newNode;
+            return;
         }
         let current = this.head;
         while (current.next !== null) {
@@ -24,7 +25,7 @@ class Queue {
             console.log("Queue is empty");
             return;
         }
-        let dequeue_element = this.head;
+        let dequeue_element = this.head.value;
         console.log(`Dequeud Element is: ${dequeue_element}`);
         this.head = this.head.next;
     }
@@ -34,9 +35,21 @@ class Queue {
             return;
         }
         let current = this.head;
-        while (current.value !== null) {
+        while (current !== null) {
             console.log(current.value);
             current = current.next;
         }
     }
+
 }
+
+
+let myQueue = new Queue();
+myQueue.printQueue();
+myQueue.enqueue(10);
+myQueue.enqueue(20);
+myQueue.enqueue(30);
+myQueue.enqueue(40);
+myQueue.printQueue();
+myQueue.dequeue();
+myQueue.printQueue();
