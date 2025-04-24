@@ -23,5 +23,11 @@ class Stack {
         this.head = this.head.next;
         console.log(`Popped value: ${poppedValue}`);
     }
+    printStack() {
+        if (this.head === null) {
+            console.log("Stack is empty");
+            return;
+        }
 
+    }
 }
