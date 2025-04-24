@@ -11,5 +11,10 @@ class Stack {
         return;
 
     }
+    size() {
+        console.log(this.arr.length());
+        return;
+    }
+
 }
 
