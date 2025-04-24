@@ -40,7 +40,13 @@ class Queue {
             current = current.next;
         }
     }
-
+    peek() {
+        if (this.head === null) {
+            console.log("Queue is empty");
+            return;
+        }
+        console.log(`Element at the beginning of the Queue is: ${this.head.value}`);
+    }
 }
 
 
@@ -53,3 +59,4 @@ myQueue.enqueue(40);
 myQueue.printQueue();
 myQueue.dequeue();
 myQueue.printQueue();
+myQueue.peek();
