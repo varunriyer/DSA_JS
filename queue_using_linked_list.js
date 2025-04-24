@@ -47,6 +47,30 @@ class Queue {
         }
         console.log(`Element at the beginning of the Queue is: ${this.head.value}`);
     }
+    size() {
+        if (this.head === null) {
+            console.log("Stack is empty; Size = 0");
+            return;
+        }
+        let current = this.head;
+        let count = 0;
+        while (current !== null) {
+            count++;
+            current = current.next;
+        }
+        console.log(`Size of Queue is = ${count}`);
+    }
+    clear() {
+        this.head = null;
+    }
+    isEmpty() {
+        if (this.head === null) {
+            console.log("Yes");
+        }
+        else {
+            console.log("No");
+        }
+    }
 }
 
 
@@ -60,3 +84,7 @@ myQueue.printQueue();
 myQueue.dequeue();
 myQueue.printQueue();
 myQueue.peek();
+myQueue.size();
+myQueue.isEmpty();
+myQueue.clear();
+myQueue.isEmpty();
