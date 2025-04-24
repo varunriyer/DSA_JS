@@ -14,5 +14,14 @@ class Stack {
         newNode.next = this.head;
         this.head = newNode;
     }
+    pop() {
+        if (this.head === null) {
+            console.log("List is empty");
+            return;
+        }
+        let poppedValue = this.head.value;
+        this.head = this.head.next;
+        console.log(`Popped value: ${poppedValue}`);
+    }
 
 }
