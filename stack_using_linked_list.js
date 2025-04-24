@@ -55,6 +55,9 @@ class Stack {
         }
         console.log(this.head.value);
     }
+    clear() {
+        this.head = null;
+    }
 }
 let myStack = new Stack();
 myStack.printStack();
@@ -67,3 +70,5 @@ myStack.pop();
 myStack.printStack();
 myStack.size();
 myStack.peek();
+myStack.clear();
+myStack.size();
