@@ -33,6 +33,24 @@ class LinkedList {
         }
         console.log(result + "null");
     }
+    size() {
+        if (this.head === null) {
+            console.log("Stack is empty; Size is 0");
+            return 0;
+        }
+        let current = this.head;
+        let count = 0;
+        while (current !== null) {
+            count++;
+            current = current.next;
+        }
+        console.log(`Size of array is = ${count}`);
+        return count;
+
+    }
+    rotateList(k) {
+
+    }
 }
 let myList = new LinkedList();
 myList.printList();
@@ -43,3 +61,4 @@ myList.append(8);
 myList.append(10);
 myList.append(12);
 myList.printList();
+myList.size();
