@@ -22,5 +22,11 @@ class Stack {
         return;
     }
 
+    peek() {
+        console.log(this.arr[-1]);
+        console.log(this.arr[this.arr.length - 1]);
+        return;
+    }
+
 }
 
