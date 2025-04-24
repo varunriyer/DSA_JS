@@ -35,6 +35,19 @@ class Stack {
             current = current.next;
         }
     }
+    size() {
+        if (this.head === null) {
+            console.log("Stack is empty; Size = 0");
+            return;
+        }
+        let current = this.head;
+        let count = 0;
+        while (current !== null) {
+            count++;
+            current = current.next;
+        }
+        console.log(`Size is = ${count}`);
+    }
 }
 let myStack = new Stack();
 myStack.printStack();
@@ -45,4 +58,4 @@ myStack.push(20);
 myStack.printStack();
 myStack.pop();
 myStack.printStack();
-
+myStack.size();
