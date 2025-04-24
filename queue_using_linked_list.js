@@ -19,4 +19,14 @@ class Queue {
         }
         current.next = newNode;
     }
+    dequeue() {
+        if (this.head === null) {
+            console.log("Queue is empty");
+            return;
+        }
+        let dequeue_element = this.head;
+        console.log(`Dequeud Element is: ${dequeue_element}`);
+        this.head = this.head.next;
+    }
+
 }
