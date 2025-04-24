@@ -44,41 +44,47 @@ class LinkedList {
             count++;
             current = current.next;
         }
-        console.log(`Size of array is = ${count}`);
         return count;
 
     }
     rotateList(k) {
-        if (k === this.size()) {
-            console.log(`After ${k} rotations the elements will be in the same order`)
+        let len = this.size();
+        if (this.head === null || k === 0 || k % len === 0) {
+            console.log(`After ${k} rotations, the list remains the same.`);
             return;
         }
-        let current = this.head
-        while (k > 0) {
-            this.head = this.head.next;
-            k--;
-        }
-        let new_curr = this.head;
-        while (new_curr.next !== null) {
-            new_curr = new_curr.next;
-        }
-        new_curr.next = current;
-        while (current.next !== this.head) {
+
+        k = k % len;
+        let current = this.head;
+        let count = 1;
+
+
+        while (count < k && current !== null) {
             current = current.next;
+            count++;
         }
+
+        let newHead = current.next;
         current.next = null;
+
+        let tail = newHead;
+        while (tail.next !== null) {
+            tail = tail.next;
+        }
+
+        tail.next = this.head;
+        this.head = newHead;
     }
+
 }
 let myList = new LinkedList();
 myList.printList();
+myList.append(1);
 myList.append(2);
+myList.append(3);
 myList.append(4);
-myList.append(6);
-myList.append(8);
-myList.append(10);
-myList.append(12);
+myList.append(5)
 myList.printList();
-myList.size();
-myList.rotateList(6);
-myList.rotateList(4);
-myList.printList()
+console.log(myList.size());
+myList.rotateList(13);
+myList.printList();
