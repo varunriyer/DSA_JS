@@ -36,4 +36,13 @@ class Stack {
         }
     }
 }
+let myStack = new Stack();
+myStack.printStack();
+myStack.push(5);
+myStack.push(10);
+myStack.push(15);
+myStack.push(20);
+myStack.printStack();
+myStack.pop();
+myStack.printStack();
 
