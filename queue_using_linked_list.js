@@ -28,5 +28,15 @@ class Queue {
         console.log(`Dequeud Element is: ${dequeue_element}`);
         this.head = this.head.next;
     }
-
+    printQueue() {
+        if (this.head === null) {
+            console.log("Queue is empty");
+            return;
+        }
+        let current = this.head;
+        while (current.value !== null) {
+            console.log(current.value);
+            current = current.next;
+        }
+    }
 }
