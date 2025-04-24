@@ -11,5 +11,8 @@ class Queue {
     size() {
         console.log(this.arr.length);
     }
+    peek() {
+        console.log(this.arr[0]);
+    }
 
 }
