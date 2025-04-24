@@ -48,6 +48,13 @@ class Stack {
         }
         console.log(`Size is = ${count}`);
     }
+    peek() {
+        if (this.head === null) {
+            console.log("Stack is empty");
+            return;
+        }
+        console.log(this.head.value);
+    }
 }
 let myStack = new Stack();
 myStack.printStack();
@@ -59,3 +66,4 @@ myStack.printStack();
 myStack.pop();
 myStack.printStack();
 myStack.size();
+myStack.peek();
