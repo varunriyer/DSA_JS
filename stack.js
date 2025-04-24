@@ -15,6 +15,12 @@ class Stack {
         console.log(this.arr.length());
         return;
     }
+    printStack() {
+        for (let value of this.arr) {
+            console.log(value);
+        }
+        return;
+    }
 
 }
 
