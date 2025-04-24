@@ -14,5 +14,9 @@ class Queue {
     peek() {
         console.log(this.arr[0]);
     }
-
+    printQueue() {
+        for (let element of this.arr) {
+            console.log([...element]);
+        }
+    }
 }
