@@ -27,8 +27,11 @@ class Stack {
 
     }
     isEmpty() {
-        if (this.arr.length === 0) console.log("Yes")
+        if (this.arr.length === 0) return (console.log("Yes"));
         console.log("No");
+    }
+    clear() {
+        this.arr = [];
     }
 }
 
@@ -42,4 +45,7 @@ myStack.pop()
 myStack.printStack();
 myStack.peek();
 myStack.size();
+myStack.isEmpty();
+myStack.clear();
+myStack.isEmpty();
 
