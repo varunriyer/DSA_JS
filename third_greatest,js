@@ -1,0 +1,17 @@
+function sort_max(arr) {
+    let n = 3
+    for (let i = 0; i < n; i++) {
+        let maxIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[maxIndex]) {
+                maxIndex = j;
+            }
+        }
+
+        [arr[i], arr[maxIndex]] = [arr[maxIndex], arr[i]];
+    }
+    return arr[n - 1];
+}
+
+let myArr = [3, 4, 6, 8, 2, 7];
+console.log("3rd Largest Element:", sort_max(myArr)); 
