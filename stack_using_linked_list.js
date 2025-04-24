@@ -58,6 +58,14 @@ class Stack {
     clear() {
         this.head = null;
     }
+    isEmpty() {
+        if (this.head === null) {
+            console.log("Yes");
+        }
+        else {
+            console.log("No");
+        }
+    }
 }
 let myStack = new Stack();
 myStack.printStack();
@@ -72,3 +80,6 @@ myStack.size();
 myStack.peek();
 myStack.clear();
 myStack.size();
+myStack.push(7);
+myStack.pop();
+myStack.isEmpty();
