@@ -62,5 +62,31 @@ class DoublyLinkedList {
         current.next = newNode;
         this.length++
     }
+    deleteNode(value) {
+        if (this.head === null) {
+            console.log("List is empty, nothing to delete")
+            return;
+        }
+        let current = this.head;
+        if (current.data === value) {
+            if (current === this.head && current === this.tail) {
+                this.head = null;
+                this.tail = null;
+            }
+            else if (current === this.head) {
+                this.head = current.next;
+                this.head.prev = null;
+            }
+            else if (current === this.tail) {
+                this.tail = current.prev;
+                this.tail.next = null;
+            }
+            else {
+                current.prev.next = current.next;
+                current.next.prev = current.prev
+            }
+            this.length--;
+        }
+    }
 
 }
