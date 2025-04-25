@@ -120,6 +120,19 @@ class DoublyLinkedList {
         }
         console.log(result + "null");
     }
+    search(value) {
+        let index = 0;
+        let current = this.head;
+        while (current !== null) {
+            if (current.value === value) {
+                console.log(`Index is = ${index}`);
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        console.log(`${value} not present in list`);
+    }
 }
 
 let myDLL = new DoublyLinkedList();
