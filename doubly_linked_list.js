@@ -87,9 +87,9 @@ class DoublyLinkedList {
                     current.next.prev = current.prev
                 }
                 this.length--;
+                return;
             }
             current = current.next;
-            return;
         }
         console.log(`${value} not found`);
     }
@@ -132,5 +132,8 @@ myDLL.insertAtEnd(11);
 myDLL.insertAtEnd(14);
 myDLL.printListReverse(); // 14<-->11<-->5<-->3<-->null
 myDLL.insertAtPosition(7, 3);
-myDLL.printList();
+myDLL.printList(); //3<-->5<-->7<-->11<-->14<-->null
 console.log(myDLL.length);
+myDLL.deleteNode(5);
+myDLL.printList(); //3<-->7<-->11<-->14<-->null
+myDLL.deleteNode(18); // 18 not found
