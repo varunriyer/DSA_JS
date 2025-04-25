@@ -64,6 +64,19 @@ class CircularLinkedList {
         } while (current !== this.head);
         console.log(result + "back to head");
     }
+    traverseToIndex(index) {
+        if (index < 0 || index > this.length - 1) {
+            console.log(`${index} is an invalid index`);
+            return;
+        }
+        let count = 0;
+        let current = this.head;
+        while (count != index) {
+            current = current.next;
+            count++;
+        }
+        console.log(`Value at index ${index}: ${current.value}`);
+    }
 }
 
 
@@ -80,5 +93,6 @@ console.log(myCLL.toArray());
 myCLL.prepend(0);
 console.log(myCLL.toArray())
 myCLL.printList();
+myCLL.traverseToIndex(2);
 
 
