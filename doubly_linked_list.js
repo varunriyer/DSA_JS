@@ -107,5 +107,17 @@ class DoublyLinkedList {
         }
         console.log(result);
     }
-
+    printListReverse() {
+        if (this.tail === null) {
+            console.log("List is empty");
+            return;
+        }
+        let current = this.tail;
+        let result = "";
+        while (current !== null) {
+            result += current.data + "<-->";
+            current = current.prev;
+        }
+        console.log(result);
+    }
 }
