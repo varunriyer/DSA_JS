@@ -14,7 +14,7 @@ class CircularLinkedList {
         let newNode = new Node(value);
         if (this.head === null) {
             this.head = newNode;
-            this.prev = newNode
+            this.tail = newNode
         }
         else {
             newNode.next = this.head;
@@ -54,4 +54,14 @@ class CircularLinkedList {
 }
 
 
+let myCLL = new CircularLinkedList();
+myCLL.toArray();
+myCLL.append(1);
+myCLL.append(2);
+myCLL.append(3);
+myCLL.append(4);
+console.log(myCLL.length);
+console.log(myCLL.toArray());
+myCLL.prepend(0);
+console.log(myCLL.toArray())
 
