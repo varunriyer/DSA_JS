@@ -25,6 +25,18 @@ class DoublyLinkedList {
         }
         this.length++
     }
-
+    insertAtEnd(value) {
+        let newNode = new Node(value)
+        if (this.tail === null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.length++;
+    }
 
 }
