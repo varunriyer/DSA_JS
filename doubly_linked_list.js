@@ -152,5 +152,8 @@ myDLL.printList(); //3<-->7<-->11<-->14<-->null
 myDLL.deleteNode(18); // 18 not found
 myDLL.search(7); //Index is = 1
 myDLL.search(17); // 17 not present in list
+myDLL.deleteNode(14);
+myDLL.printList(); //3<-->7<-->11<-->null
+
 
 
