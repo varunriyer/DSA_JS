@@ -51,17 +51,34 @@ class CircularLinkedList {
 
         return arr;
     }
+    printList() {
+        if (!this.head) {
+            console.log("List is empty");
+            return;
+        }
+        let current = this.head;
+        let result = "";
+        do {
+            result += current.value + "-->";
+            current = current.next;
+        } while (current !== this.head);
+        console.log(result + "back to head");
+    }
 }
 
 
 let myCLL = new CircularLinkedList();
 myCLL.toArray();
+myCLL.printList();
 myCLL.append(1);
 myCLL.append(2);
 myCLL.append(3);
 myCLL.append(4);
+myCLL.printList()
 console.log(myCLL.length);
 console.log(myCLL.toArray());
 myCLL.prepend(0);
 console.log(myCLL.toArray())
+myCLL.printList();
+
 
