@@ -10,7 +10,19 @@ class CircularLinkedList {
         this.tail = null;
         this.length = 0;
     }
-
+    append(value) {
+        let newNode = new Node(value);
+        if (this.head === null) {
+            this.head = newNode;
+            this.prev = newNode
+        }
+        else {
+            newNode.next = this.head;
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+    }
 
 }
 
