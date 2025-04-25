@@ -36,6 +36,22 @@ class CircularLinkedList {
         }
         this.length++;
     }
+    toArray() {
+        if (this.head === null) {
+            console.log("List is empty");
+            return;
+        }
+        let arr = [];
+        let current = this.head;
 
+        do {
+            arr.push(current.value);
+            current = current.next;
+        } while (current !== this.head)
+
+        return arr;
+    }
 }
+
+
 
