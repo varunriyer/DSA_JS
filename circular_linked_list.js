@@ -23,6 +23,19 @@ class CircularLinkedList {
         }
         this.length++;
     }
+    prepend(value) {
+        let newNode = new Node(value);
+        if (this.head === null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.next = this.head;
+            this.tail.next = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+    }
 
 }
 
