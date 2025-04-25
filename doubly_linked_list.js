@@ -38,5 +38,29 @@ class DoublyLinkedList {
         }
         this.length++;
     }
+    insertAtPosition(value, position) {
+        if (position < 0 || position > this.length) {
+            console.log(`Invalid position: ${position}`);
+            return;
+        }
+        if (position === 0) {
+            this.insertAtBeginning(value);
+            return;
+        }
+        if (position === this.length) {
+            this.insertAtEnd(value);
+            return;
+        }
+        let newNode = new Node(value);
+        let current = this.head;
+        for (let i = 0; i < position - 1; i++) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        newNode.prev = current;
+        current.next.prev = newNode;
+        current.next = newNode;
+        this.length++
+    }
 
 }
