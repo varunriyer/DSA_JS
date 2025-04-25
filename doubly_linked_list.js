@@ -43,7 +43,7 @@ class DoublyLinkedList {
             console.log(`Invalid position: ${position}`);
             return;
         }
-        if (position === 0) {
+        if (position === 1) {
             this.insertAtBeginning(value);
             return;
         }
@@ -53,7 +53,7 @@ class DoublyLinkedList {
         }
         let newNode = new Node(value);
         let current = this.head;
-        for (let i = 0; i < position - 1; i++) {
+        for (let i = 1; i < position - 1; i++) {
             current = current.next;
         }
         newNode.next = current.next;
@@ -69,7 +69,7 @@ class DoublyLinkedList {
         }
         let current = this.head;
         while (current !== null) {
-            if (current.data === value) {
+            if (current.value === value) {
                 if (current === this.head && current === this.tail) {
                     this.head = null;
                     this.tail = null;
@@ -102,10 +102,10 @@ class DoublyLinkedList {
         let current = this.head;
         let result = "";
         while (current !== null) {
-            result += current.data + "<-->";
+            result += current.value + "<-->";
             current = current.next;
         }
-        console.log(result);
+        console.log(result + "null");
     }
     printListReverse() {
         if (this.tail === null) {
@@ -115,9 +115,22 @@ class DoublyLinkedList {
         let current = this.tail;
         let result = "";
         while (current !== null) {
-            result += current.data + "<-->";
+            result += current.value + "<-->";
             current = current.prev;
         }
-        console.log(result);
+        console.log(result + "null");
     }
 }
+
+let myDLL = new DoublyLinkedList();
+myDLL.printList(); // List is empty
+console.log(myDLL.length); // 0
+myDLL.insertAtBeginning(5);
+myDLL.insertAtBeginning(3);
+myDLL.printList() //3<-->5<-->null
+myDLL.insertAtEnd(11);
+myDLL.insertAtEnd(14);
+myDLL.printListReverse(); // 14<-->11<-->5<-->3<-->null
+myDLL.insertAtPosition(7, 3);
+myDLL.printList();
+console.log(myDLL.length);
