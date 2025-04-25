@@ -68,25 +68,30 @@ class DoublyLinkedList {
             return;
         }
         let current = this.head;
-        if (current.data === value) {
-            if (current === this.head && current === this.tail) {
-                this.head = null;
-                this.tail = null;
+        while (current !== null) {
+            if (current.data === value) {
+                if (current === this.head && current === this.tail) {
+                    this.head = null;
+                    this.tail = null;
+                }
+                else if (current === this.head) {
+                    this.head = current.next;
+                    this.head.prev = null;
+                }
+                else if (current === this.tail) {
+                    this.tail = current.prev;
+                    this.tail.next = null;
+                }
+                else {
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev
+                }
+                this.length--;
             }
-            else if (current === this.head) {
-                this.head = current.next;
-                this.head.prev = null;
-            }
-            else if (current === this.tail) {
-                this.tail = current.prev;
-                this.tail.next = null;
-            }
-            else {
-                current.prev.next = current.next;
-                current.next.prev = current.prev
-            }
-            this.length--;
+            current = current.next;
+            return;
         }
+        console.log(`${value} not found`);
     }
 
 }
