@@ -94,4 +94,18 @@ class DoublyLinkedList {
         console.log(`${value} not found`);
     }
 
+    printList() {
+        if (this.head === null) {
+            console.log("List is empty");
+            return;
+        }
+        let current = this.head;
+        let result = "";
+        while (current !== null) {
+            result += current.data + "<-->";
+            current = current.next;
+        }
+        console.log(result);
+    }
+
 }
