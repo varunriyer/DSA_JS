@@ -40,9 +40,10 @@ class Tree {
         while (queue.length) {
             let item = queue.shift();
 
-            console.log(item);
+            console.log(item.value);
 
             if (item.left) queue.push(item.left)
+            if (item.right) queue.push(item.right);
         }
     }
 }
