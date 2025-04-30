@@ -94,7 +94,7 @@
             return this.log[this.log.length - 1];
         },
     };
-    //  obj2.latest = "new value"; // --> this can be modified as get is not used 
+    //  obj2.latest = "new value"; --> this can be modified as get is not used 
     console.log(obj2.latest());
 }
 {
@@ -294,3 +294,27 @@
 
 }
 
+//Practicing using Object.assign()
+{
+    let obj1 = {
+        a: 1,
+        b: 2,
+    };
+    let obj2 = {
+        b: 3,
+        c: 4,
+    }
+
+    obj1 = Object.assign(obj1, obj2);
+
+    console.log(obj1); // {a:1,b:3,c:4}
+
+    let rand_obj = {
+        value: 34,
+        name: "Jitesh",
+        c: 82,
+    };
+
+    obj1 = Object.assign(obj1, obj2, rand_obj);
+    console.log(obj1);
+}
