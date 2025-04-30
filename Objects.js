@@ -247,11 +247,15 @@
     let obj = {
         value: 42,
         name: "Joe",
-    }
+    };
+
+    Object.defineProperty(obj, "value", {
+        enumerable: false,
+    });
 
     let descriptor = Object.getOwnPropertyDescriptor(obj, "value");
 
-    console.log(descriptor.writable); //true
-    console.log(descriptor.value); //42
-    console.log(descriptor.enumerable); //true
+    console.log(descriptor.writable); // true
+    console.log(descriptor.value); // 42
+    console.log(descriptor.enumerable); // false
 }
