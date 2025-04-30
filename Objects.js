@@ -331,6 +331,7 @@
             e: {
                 value: 100,
                 enumerable: true,
+                configurable: true
             }
         }
     )
@@ -338,5 +339,11 @@
     console.log(rand_obj.d);
     console.log(rand_obj.e);
     console.log(Object.getOwnPropertyDescriptors(rand_obj));
+    console.log(rand_obj);
+
+    Object.defineProperty(rand_obj, "e", {
+        value: 101,
+        enumerable: true,
+    });
     console.log(rand_obj);
 }
