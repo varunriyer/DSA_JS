@@ -94,7 +94,7 @@
             return this.log[this.log.length - 1];
         },
     };
-    // obj2.latest = "new value"; --> this can be modified as get is not used 
+    //  obj2.latest = "new value"; // --> this can be modified as get is not used 
     console.log(obj2.latest());
 }
 {
@@ -279,3 +279,18 @@
 
     console.log(Object.getOwnPropertyNames(obj)); // [ 'a', 'b', 'c' ]
 }
+
+//Object.groupBy()
+{
+    let inventory = [
+        { name: "apple", quantity: 9 },
+        { name: "banana", quantity: 15 },
+        { name: "kiwi", quantity: 4 },
+        { name: "watermelon", quantity: 1 },
+    ];
+    let result = Object.groupBy(inventory, ({ quantity }) => quantity > 5 ? "sufficient" : "restock");
+    console.log(result.restock); // [ { name: 'kiwi', quantity: 4 }, { name: 'watermelon', quantity: 1 } ]
+    console.log(result.sufficient); // [ { name: 'apple', quantity: 9 }, { name: 'banana', quantity: 15 } ]
+
+}
+
