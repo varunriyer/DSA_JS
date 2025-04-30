@@ -241,3 +241,17 @@
 
     console.log(obj2);
 }
+
+//Object.getOwnPropertyDescriptor()
+{
+    let obj = {
+        value: 42,
+        name: "Joe",
+    }
+
+    let descriptor = Object.getOwnPropertyDescriptor(obj, "value");
+
+    console.log(descriptor.writable); //true
+    console.log(descriptor.value); //42
+    console.log(descriptor.enumerable); //true
+}
