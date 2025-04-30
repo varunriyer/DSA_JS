@@ -227,4 +227,17 @@
 
     let obj_arr = Object.fromEntries(arr);
     console.log(obj_arr);
+
+    //You can also you Object.fromEntries for Transformations
+
+    let obj2 = {
+        a: 1,
+        b: 2,
+        c: 3,
+    };
+    console.log(obj2);
+
+    obj2 = Object.fromEntries(Object.entries(obj2).map(([key, value]) => [key, value * 2]));
+
+    console.log(obj2);
 }
