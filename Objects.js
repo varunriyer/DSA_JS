@@ -317,4 +317,26 @@
 
     obj1 = Object.assign(obj1, obj2, rand_obj);
     console.log(obj1);
+
+    //Revising how to use Object.property
+
+    Object.defineProperties(rand_obj,
+        {
+            d: {
+                value: 99,
+                enumerable: true,
+                writable: true,
+                configurable: false
+            },
+            e: {
+                value: 100,
+                enumerable: true,
+            }
+        }
+    )
+
+    console.log(rand_obj.d);
+    console.log(rand_obj.e);
+    console.log(Object.getOwnPropertyDescriptors(rand_obj));
+    console.log(rand_obj);
 }
