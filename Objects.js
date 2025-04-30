@@ -258,4 +258,13 @@
     console.log(descriptor.writable); // true
     console.log(descriptor.value); // 42
     console.log(descriptor.enumerable); // false
+
+
+    //Object.getOwnPropertyDescriptors()
+
+    let obj_descriptor = Object.getOwnPropertyDescriptors(obj);
+    console.log(obj_descriptor.value.writable); //true
+    console.log(obj_descriptor.name.enumerable); //true
+    console.log(obj_descriptor.value.enumerable); //false
+
 }
