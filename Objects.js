@@ -268,3 +268,14 @@
     console.log(obj_descriptor.value.enumerable); //false
 
 }
+
+// Object.getOwnPropertyNames()
+{
+    let obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+    };
+
+    console.log(Object.getOwnPropertyNames(obj)); // [ 'a', 'b', 'c' ]
+}
