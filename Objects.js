@@ -347,3 +347,36 @@
     });
     console.log(rand_obj);
 }
+
+// Initialize an empty array to store people data
+let people = [];
+
+// Function to add a new person to the array
+function addPerson(name, age, address) {
+    const person = {
+        name: name,
+        age: age,
+        address: address
+    };
+
+    // Push the new person to the people array
+    people.push(person);
+
+    // Display the updated table
+    displayTable();
+}
+
+// Function to display the data in the console as a table
+function displayTable() {
+    console.clear(); // Clear the console to avoid clutter
+    console.table(people); // Display the array as a table in the console
+}
+
+// Example Usage:
+
+// Add new people
+addPerson('John Doe', 25, '1234 Elm St');
+addPerson('Jane Smith', 30, '5678 Oak St');
+addPerson('Bob Johnson', 22, '91011 Pine St');
+
+// The table will automatically be displayed after each addition
